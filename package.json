@@ -1,0 +1,26 @@
+{
+  "name": "note-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yujilow1220/note-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yujilow1220/note-client/issues"
+  },
+  "homepage": "https://github.com/yujilow1220/note-client#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "restler": "^3.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  }
+}
