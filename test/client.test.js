@@ -3,7 +3,7 @@ var client = require('../lib/client');
 
 describe('client', function () {
     it('ファイルを読み込める', function (done) {
-    	
+
         client.read('./test.md', function(text){
         	assert.equal(text, 'test');
         	done();
@@ -16,5 +16,9 @@ describe('client', function () {
     			done();
     		});
     	});
+    });
+
+    it('post', function(){
+    	
     });
 });
