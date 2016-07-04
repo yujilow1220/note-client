@@ -11,7 +11,7 @@ gulp.task('watch', function(){
 
 gulp.task('post', function(){
 	client.read('./write-your-note.md', function(text){
-		var post = {text:text, author:user.name, postedAt:Date.now()};
+		var post = {text:text, tag:tag};
 		client.post(post, function(){
 			client.erase('./write-your-note.md', function(){
 				console.log("ok in " + tag);
@@ -26,3 +26,14 @@ gulp.task('tag', function() {
   tag = argv.t || 'root';
 	gulp.watch('write-your-note.md',['post']);
 });
+
+gulp.task('save', function(){
+	client.read('./write-your-note.md', function(text){
+		var post = {text:text, tag:tag};
+		client.save(post, function(){
+			client.erase('./write-your-note.md', function(){
+				console.log("ok in " + tag);
+			});
+		});
+	});
+})
