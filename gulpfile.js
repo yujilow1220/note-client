@@ -37,3 +37,9 @@ gulp.task('save', function(){
 		});
 	});
 })
+
+gulp.task('sync', function(){
+	client.postStore(function(){
+		console.log("ok");
+	});
+});
