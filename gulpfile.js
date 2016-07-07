@@ -39,7 +39,9 @@ gulp.task('save', function(){
 })
 
 gulp.task('sync', function(){
-	client.postStore(function(){
-		console.log("ok");
+	client.postStore(function(data){
+		if(data === "ok"){
+			client.reset();
+		}
 	});
 });
