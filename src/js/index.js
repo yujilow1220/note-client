@@ -13,8 +13,7 @@ function noteClientViewModel(){
   var editor = ace.edit("editor");
   self.existTags = ko.observableArray([]);
   self.tag = ko.observable("");
-  self.tag.subscribe(function(newValue){
-    console.log(self.tag())
+  self.tag.subscribe(function(){
     editor.focus();
   });
   self.post = function(){
@@ -52,6 +51,9 @@ function noteClientViewModel(){
       }
   });
 
+
+  load(self);
+
 };
 
 
@@ -63,6 +65,22 @@ ko.applyBindings(new noteClientViewModel());
 functions
 
 */
+
+function load(self){
+  loadTag(function(data){
+    self.existTags(data);
+  });
+}
+
+function loadTag(callback){
+  var url = "http://localhost:3000/tags"
+  $.ajax({
+    type : 'get',
+    url : url
+  }).done(function(data){
+    callback(data);
+  });
+}
 
 
 

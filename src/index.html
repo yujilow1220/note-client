@@ -17,8 +17,8 @@
         <div class="form-group">
             <input id="tag" type="text" class="form-control" placeholder="write tag name here" data-bind="value:tag"/>
         </div>
-        <ul class="list-group taglist">
-          <li class="list-group-item">Ops! Something wrong with Network...</li>
+        <ul class="list-group taglist" data-bind="foreach: existTags">
+          <li class="list-group-item" data-bind="text:text">Ops! Something wrong with Network...</li>
         </ul>
       </div>
     </div>
