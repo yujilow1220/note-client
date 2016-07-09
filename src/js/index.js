@@ -33,13 +33,6 @@ function noteClientViewModel(){
     }).done(function(data){
     });
   };
-
-  self.save = function(){
-    savePostToStore({aaa:'iii'});
-  }
-
-
-
 };
 
 
