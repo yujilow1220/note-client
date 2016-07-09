@@ -16,6 +16,10 @@ function noteClientViewModel(){
   self.tag.subscribe(function(){
     editor.focus();
   });
+  self.onClickTag = function(data){
+    self.tag(data.text);
+    editor.focus();
+  }
   self.post = function(){
     var content = editor.getValue();
     var tag = self.tag() || 'root';
