@@ -46,7 +46,7 @@ function noteClientViewModel(){
   });
   editor.commands.addCommand({
       name: "focus to tag",
-      bindKey: {win: "Ctrl-E", mac: "Command-E"},
+      bindKey: {win: "Ctrl-T", mac: "Command-T"},
       exec: function(editor) {
         $("#tag").focus().select();
       }
