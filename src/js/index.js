@@ -48,7 +48,7 @@ function noteClientViewModel(){
       name: "focus to tag",
       bindKey: {win: "Ctrl-E", mac: "Command-E"},
       exec: function(editor) {
-        $("#tag").focus();
+        $("#tag").focus().select();
       }
   });
 
