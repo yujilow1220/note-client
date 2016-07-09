@@ -41,7 +41,7 @@ function noteClientViewModel(){
       name: "send a post",
       bindKey: {win: "Ctrl-Enter", mac: "Command-Enter"},
       exec: function(editor) {
-        console.log(self.tag());
+        self.post();
       }
   });
   editor.commands.addCommand({
