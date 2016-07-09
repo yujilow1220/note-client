@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.col-md-8 {
+  padding:0;
+}
