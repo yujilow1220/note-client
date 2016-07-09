@@ -18,14 +18,13 @@ function noteClientViewModel(){
   });
   self.post = function(){
     var content = editor.getValue();
-    var tag = self.tag();
+    var tag = self.tag() || 'root';
     var url = "http://localhost:3000/post";
-    var store = getStore();
     var json = {
       text: content,
       tag: tag
     }
-    saveJSON(store);
+    saveJSON(json);
     $.ajax({
       type : 'post',
       url : url,
@@ -34,6 +33,8 @@ function noteClientViewModel(){
       dataType : 'JSON',
       scriptCharset: 'utf-8',
     }).done(function(data){
+      editor.setValue("");
+      console.log(data);
     });
   };
   editor.commands.addCommand({

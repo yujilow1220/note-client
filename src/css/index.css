@@ -13,14 +13,17 @@ body {
 }
 
 .sidebar {
-  text-align:center;
-  /*padding: 10px;*/
+  text-align: center;
 }
 
-.padding {
-  padding:10px;
+.col-md-8 {
+  padding:0;
 }
 
-.taglist {
-  overflow-y: scroll;
+.post-button {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  margin-bottom: 50px;
+  padding-right:30px;
 }
