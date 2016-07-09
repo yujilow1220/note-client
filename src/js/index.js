@@ -10,9 +10,13 @@ editor.setFontSize(15);
 
 function noteClientViewModel(){
   var self = this;
-
+  var editor = ace.edit("editor");
   self.existTags = ko.observableArray([]);
   self.tag = ko.observable("");
+  self.tag.subscribe(function(newValue){
+    console.log(self.tag())
+    editor.focus();
+  });
   self.post = function(){
     var content = editor.getValue();
     var tag = self.tag();
@@ -38,6 +42,13 @@ function noteClientViewModel(){
       bindKey: {win: "Ctrl-Enter", mac: "Command-Enter"},
       exec: function(editor) {
         console.log(self.tag());
+      }
+  });
+  editor.commands.addCommand({
+      name: "focus to tag",
+      bindKey: {win: "Ctrl-E", mac: "Command-E"},
+      exec: function(editor) {
+        $("#tag").focus();
       }
   });
 
