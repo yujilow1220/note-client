@@ -12,6 +12,15 @@ body {
     height: 100%;
 }
 
-.col-md-8 {
-  padding:0;
+.sidebar {
+  text-align:center;
+  /*padding: 10px;*/
+}
+
+.padding {
+  padding:10px;
+}
+
+.taglist {
+  overflow-y: scroll;
 }
