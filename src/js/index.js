@@ -38,7 +38,7 @@ function noteClientViewModel(){
       scriptCharset: 'utf-8',
     }).done(function(data){
       editor.setValue("");
-      console.log(data);
+      load(self);
     });
   };
   editor.commands.addCommand({
@@ -55,8 +55,6 @@ function noteClientViewModel(){
         $("#tag").focus().select();
       }
   });
-
-
   load(self);
 
 };
