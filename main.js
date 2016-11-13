@@ -1,8 +1,8 @@
 'use strict';
 
 var electron = require('electron');
-var app = electron.app;
-var BrowserWindow = electron.BrowserWindow;
+const {Menu, app, BrowserWindow} = require('electron');
+var template = require('./lib/menu').template(app);
 
 var mainWindow = null;
 
@@ -16,6 +16,8 @@ app.on('ready', function() {
   // ブラウザ(Chromium)の起動, 初期画面のロード
   mainWindow = new BrowserWindow({width: 1200, height: 600});
   mainWindow.loadURL('file://' + __dirname + '/src/index.html');
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 
   mainWindow.on('closed', function() {
     mainWindow = null;

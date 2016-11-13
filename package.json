@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yujilow1220/note-client#readme",
   "dependencies": {
+    "electron": "^1.4.6",
     "gulp": "^3.9.1",
     "minimist": "^1.2.0",
     "restler": "^3.4.0"
