@@ -1,4 +1,7 @@
 var editor = ace.edit("editor");
+const pref = require('electron-preference');
+var config = null;
+var URL = null;
 editor.$blockScrolling = Infinity;
 editor.setOptions({
   enableBasicAutocompletion: true,
@@ -23,7 +26,7 @@ function noteClientViewModel(){
   self.post = function(){
     var content = editor.getValue();
     var tag = self.tag() || 'root';
-    var url = "http://localhost:3000/post";
+    var url = URL + "/post";
     var json = {
       text: content,
       tag: tag
@@ -58,9 +61,16 @@ function noteClientViewModel(){
   load(self);
 
 };
+pref.get(function(data){
+    config = data;
+    URL = config.server.url;
+    if(URL === "http://example.com"){
+      alert("Please set your Server URL via Preference!");
+    }
+    ko.applyBindings(new noteClientViewModel());
+});
 
 
-ko.applyBindings(new noteClientViewModel());
 
 
 /**
@@ -76,7 +86,7 @@ function load(self){
 }
 
 function loadTag(callback){
-  var url = "http://localhost:3000/tags"
+  var url = URL + "/tags";
   $.ajax({
     type : 'get',
     url : url

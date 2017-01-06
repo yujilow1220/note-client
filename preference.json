@@ -1,0 +1,14 @@
+[
+  {
+    "name": "server",
+    "items":[
+      {
+        "name":"url",
+        "text":"Server URL",
+        "type":"text",
+        "description":"Please type your Note Server URL",
+        "default":"http://example.com"
+      }
+    ]
+  }
+]
